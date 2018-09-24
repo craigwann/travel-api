@@ -33,7 +33,7 @@ class DestinationsController < ApplicationController
 
   private
   def destination_params
-    params.require(:destination).permit(:name, :country, :city, :description, :id)
+    params.permit(:name, :country, :city, :description, :id)
   end
   def json_response(object)
     render json: object, status: :ok
