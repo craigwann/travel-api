@@ -34,7 +34,5 @@ class ReviewsController < ApplicationController
   def review_params
     params.permit(:body, :user_id, :destination_id)
   end
-  def json_response(object)
-    render json: object, status: :ok
-  end
+  
 end
