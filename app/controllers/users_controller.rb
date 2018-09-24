@@ -10,12 +10,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # if @user.save
-    #   flash[:notice] = "User successfully added!"
-    #   redirect_to products_path
-    # else
-    #   render :new
-    # end
+    @user.save
+    json_response(@user)
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
   end
 
   def edit
@@ -27,6 +28,9 @@ class UsersController < ApplicationController
   end
 
   private
+  def user_params
+    params.permit(:name, :email, :password, :id)
+  end
   def json_response(object)
     render json: object, status: :ok
   end
