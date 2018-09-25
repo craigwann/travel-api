@@ -9,10 +9,13 @@ gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker'
 gem 'pivotal_git_scripts'
+gem 'rack-cors'
+gem 'rspec-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
+  gem 'factory_bot_rails'
 end
 
 group :development do

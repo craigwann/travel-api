@@ -22,7 +22,7 @@ class DestinationsController < ApplicationController
 
   def update
     @destination = Destination.find(params[:id])
-    @destination.update(destination_params)
+    @destination.update!(destination_params)
   end
 
   def destroy
