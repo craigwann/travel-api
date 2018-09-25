@@ -29,7 +29,7 @@ class Seed
     @dest_all = Destination.all.ids
     @dest_all.each do |it|
       3.times do |i|
-        Review.create!( body: Faker::Lorem.sentence(8), user_id: @user_all.sample, destination_id: it)
+        Review.create!( blurb: Faker::Lorem.sentence(8), user_id: @user_all.sample, destination_id: it)
       end
     end
   end
